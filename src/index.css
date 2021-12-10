@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+h1{
+  text-align: center;
+  padding: 20px;
+  color: #FFF;
+}
+
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -12,11 +18,12 @@ body {
   background-image: url("./backgrounds/warm-day.png");
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 case-out;
+  transition: all .4s ease-in;
 }
 
 .App.cold {
   background-image: url(./backgrounds/cold-day.png);
+  transition: all .4s ease-in;
 }
 
 main {
@@ -32,6 +39,7 @@ main {
 .input{
   width: 100%;
   margin: 0 0 75px;
+  display: flex;
 }
 
 .input .input-field{
@@ -50,13 +58,24 @@ main {
 
   color: #313131;
   font-size: 16px;
-  transition: 0.4s ease;
+  transition: all 1s ease-in;
+  position: relative;
 }
 
 .input .input-field:focus {
 background-color: rgba(255, 255, 255, 0.75);
 } 
-
+.submit-button{
+  margin-top: 6px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 8%;
+  border-radius: 5px;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-image: url(./backgrounds/search_arrow.gif), radial-gradient(green, blue);
+}
 .location-box .location {
 color: #FFF;
 font-size: 32px;
@@ -101,4 +120,37 @@ text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+.weather{
+  padding-bottom: 5%;
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  list-style-type: none;
+  padding: 0 20%;
+
+}
+li {
+  color: #FFF;
+  padding-top: 20px;
+  
+}
+@media (max-width:350px) {
+  .submit-button{
+    right: 10%;
+  }
+}
+
+@media (min-width:800px){
+  .input {
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 10%;
+  }
+  .submit-button{
+    right: 20%;
+  }
 }
